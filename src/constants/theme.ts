@@ -35,6 +35,10 @@ export const theme = {
       fontSize: 24,
       fontWeight: 'bold' as const,
     },
+    headline: {
+      fontSize: 20,
+      fontWeight: '600' as const,
+    },
     body: {
       fontSize: 16,
       fontWeight: 'normal' as const,
