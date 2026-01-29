@@ -7,15 +7,17 @@ import {
   StyleSheet,
   Pressable,
 } from 'react-native';
-import { StackScreenProps } from '@react-navigation/stack';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { RootStackParamList } from '../../App';
 import { useChatStore } from '../store/chatStore';
 import { theme } from '../constants/theme';
 import { Chat } from '../types';
 
-type Props = StackScreenProps<RootStackParamList, 'ChatList'>;
+type NavigationProp = StackNavigationProp<RootStackParamList>;
 
-export default function ChatListScreen({ navigation }: Props) {
+export default function ChatListScreen() {
+  const navigation = useNavigation<NavigationProp>();
   const chats = useChatStore(state => state.chats);
 
   const formatTimestamp = (date: Date) => {
